@@ -1,0 +1,50 @@
+<h1>Welcome to FutureNow: Goal Analysis</h1><br>
+<h3><i>FutureNow: Goal Analysis is software designed to make your goals more achievable.<br>
+Want to make a million dollars in the next 5 years? FutureNow will break down your targeted<br>
+dollar amount into <u>smaller and easier to achieve mini-goals.</u></i></h3>
+<p><br><hr>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @dreamplan.clientname %>
+</p>
+
+<p>
+  <b>Target Amount:</b>
+  <%= number_to_currency(@dreamplan.targetamount) %>
+</p>
+
+<p>
+  <b>Total Time Frame:</b>
+  <%= @dreamplan.totaltimeframe %> years
+</p>
+
+<p>
+  <b>Target Amount per Year:</b>
+  <%= number_to_currency(@dreamplan.targetamount / @dreamplan.totaltimeframe) %>
+</p>
+
+<p>
+  <b>Target Amount per Month:</b>
+  <%= number_to_currency((@dreamplan.targetamount / @dreamplan.totaltimeframe)/12) %>
+</p>
+
+<p>
+  <b>Target Amount per Week:</b>
+  <%= number_to_currency((@dreamplan.targetamount / @dreamplan.totaltimeframe)/52) %>
+</p>
+
+<p>
+  <b>Target Amount per Day (@ 365 per year):</b>
+  <%= number_to_currency((@dreamplan.targetamount / @dreamplan.totaltimeframe)/365) %>
+</p>
+
+<p>
+  <b>Target Amount per Hour (@ 24 hours continuous per day):</b>
+  <%= number_to_currency((@dreamplan.targetamount / @dreamplan.totaltimeframe)/8760) %>
+</p>
+
+
+<%= link_to 'Edit', edit_dreamplan_path(@dreamplan) %> |
+<%= link_to 'Back', dreamplans_path %>

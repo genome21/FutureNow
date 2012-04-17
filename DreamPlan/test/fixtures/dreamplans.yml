@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  clientname: MyString
+  targetamount: 1
+  totaltimeframe: 1
+  targetamountperyear: 1
+
+two:
+  clientname: MyString
+  targetamount: 1
+  totaltimeframe: 1
+  targetamountperyear: 1

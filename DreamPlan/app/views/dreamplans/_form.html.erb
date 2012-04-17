@@ -1,0 +1,34 @@
+<h1>Welcome to FutureNow: Goal Analysis</h1><br>
+<h3><i>FutureNow: Goal Analysis is software designed to make your goals more achievable.<br>
+Want to make a million dollars in the next 5 years? FutureNow will break down your targeted<br>
+dollar amount into <u>smaller and easier to achieve mini-goals.</u></i></h3>
+<p><br><hr>
+<%= form_for(@dreamplan) do |f| %>
+  <% if @dreamplan.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@dreamplan.errors.count, "error") %> prohibited this dreamplan from being saved:</h2>
+
+      <ul>
+      <% @dreamplan.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label "Name" %><br />
+    <%= f.text_field :clientname %>
+  </div>
+  <div class="field">
+    <%= f.label "Target Amount" %><br />
+    <%= f.number_field :targetamount %> USD
+  </div>
+  <div class="field">
+    <%= f.label "Total Time Frame" %><br />
+    <%= f.number_field :totaltimeframe %> Years
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

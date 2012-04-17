@@ -1,0 +1,34 @@
+<h1>Welcome to FutureNow: Goal Analysis</h1><br>
+<h3><i>FutureNow: Goal Analysis is software designed to make your goals more achievable.<br>
+Want to make a million dollars in the next 5 years? FutureNow will break down your targeted<br>
+dollar amount into <u>smaller and easier to achieve mini-goals.</u></i></h3>
+<p><br><hr>
+<h1>Listing all dreamplans</h1>
+
+<table border=1>
+  <tr>
+    <th>Name</th>
+    <th>Target Amount</th>
+    <th>Total Time Frame</th>
+    <th>Target Amount per Year</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @dreamplans.each do |dreamplan| %>
+  <tr>
+    <td align = "center"><%= dreamplan.clientname %></td>
+    <td align = "center"> <%= number_to_currency(dreamplan.targetamount) %> </td>
+    <td align = "center"><%= dreamplan.totaltimeframe %> years</td>
+    <td align = "center"> <%= number_to_currency(dreamplan.targetamount / dreamplan.totaltimeframe) %> </td>
+    <td align = "center"><%= link_to 'More Info', dreamplan %></td>
+    <td align = "center"><%= link_to 'Edit', edit_dreamplan_path(dreamplan) %></td>
+    <td align = "center"><%= link_to 'Destroy', dreamplan, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Dreamplan', new_dreamplan_path %>
